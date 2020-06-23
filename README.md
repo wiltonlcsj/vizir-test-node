@@ -35,4 +35,5 @@
 1. `yarn dev` --> Inicia em modo debug colocando as saídas no console
 2. `yarn start` --> Inicia em modo de produção
 
-#### Algumas outras ações como criar, editar e excluir foram implementadas
+**Algumas outras ações como criar, editar e excluir foram implementadas no backend porém não serão no frontend**
+
