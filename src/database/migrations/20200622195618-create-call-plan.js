@@ -8,6 +8,7 @@ module.exports = {
     },
     name: {
       type: Sequelize.STRING,
+      unique: true,
     },
     minutes: {
       type: Sequelize.DECIMAL(10, 2),
@@ -16,11 +17,11 @@ module.exports = {
       type: Sequelize.DECIMAL(10, 2),
       defaultValue: 0.1,
     },
-    createdAt: {
+    created_at: {
       allowNull: false,
       type: Sequelize.DATE,
     },
-    updatedAt: {
+    updated_at: {
       allowNull: false,
       type: Sequelize.DATE,
     },

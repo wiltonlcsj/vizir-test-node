@@ -17,10 +17,12 @@ class UserService {
     const { email, password } = body;
     const user = await User.findOne({ where: { email } });
 
+    // Checa se o usuário existe
     if (!user) {
       return { status: 401, body: { error: 'User not found' } };
     }
 
+    // Checa se o password passado é igual ao password do usuário
     if (!(await user.checkPassword(password))) {
       return { status: 401, body: { error: 'Password does not match' } };
     }
@@ -53,6 +55,7 @@ class UserService {
       return { status: 400, body: { error: 'Validation fails' } };
     }
 
+    // Checa se existe usuário existente com o email do cadastro
     const userExists = await User.findOne({ where: { email: body.email } });
     if (userExists) {
       return { status: 400, body: { error: 'User already exists' } };
@@ -87,6 +90,10 @@ class UserService {
     const { email, oldPassword } = body;
     const user = await User.findByPk(userId);
 
+    /*
+    * Checa se o novo email é diferente do email antigo e se já existe usuário
+    * com o email passado
+    */
     if (email && (email !== user.email)) {
       const userExists = await User.findOne({ where: { email } });
 
@@ -95,6 +102,7 @@ class UserService {
       }
     }
 
+    // Checa se o password antigo e o novo são diferentes
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
       return { status: 401, body: { error: 'Password does not match' } };
     }

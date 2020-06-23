@@ -4,4 +4,5 @@ tmp
 yarn.lock
 __tests__/coverage
 __tests__/database.sqlite
+__tests__/database.sqlite-journal
 package-lock.json

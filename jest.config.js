@@ -1,11 +1,7 @@
 module.exports = {
   bail: 1,
   clearMocks: true,
-  collectCoverage: true,
-  collectCoverageFrom: ['src/app/**/*.js'],
-  coveragePathIgnorePatterns: ['src/app/controllers'],
-  coverageDirectory: '__tests__/coverage',
-  coverageReporters: ['text', 'lcov'],
+  collectCoverage: false,
   testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.test.js'],
   transform: {

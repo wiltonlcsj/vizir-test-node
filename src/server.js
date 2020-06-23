@@ -1,5 +1,8 @@
 import app from './app';
+import './bootstrap';
 
-const port = 3000;
+const port = process.env.APP_PORT;
 
-app.listen(port);
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
